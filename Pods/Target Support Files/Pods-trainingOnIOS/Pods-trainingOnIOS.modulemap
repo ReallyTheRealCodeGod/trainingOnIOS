@@ -1,0 +1,6 @@
+framework module Pods_trainingOnIOS {
+  umbrella header "Pods-trainingOnIOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

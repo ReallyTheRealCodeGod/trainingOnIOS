@@ -20,8 +20,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        errorLabel.alpha = 0
+            // Do any additional setup after loading the view.
     }
     
 
@@ -36,6 +36,7 @@ class LoginViewController: UIViewController {
     */
 
     @IBAction func loginButtonPressed(_ sender: UIButton) {
+        
     }
     
     

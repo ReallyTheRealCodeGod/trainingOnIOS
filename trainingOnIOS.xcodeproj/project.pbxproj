@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,9 @@
 		483BB85325F951DF00BEFF1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483BB85225F951DF00BEFF1E /* Assets.xcassets */; };
 		483BB85625F951DF00BEFF1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483BB85425F951DF00BEFF1E /* LaunchScreen.storyboard */; };
 		5334CD9125F97B9600C49054 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5334CD9025F97B9600C49054 /* GoogleService-Info.plist */; };
+		5334CDB625FA288100C49054 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5334CDB525FA288100C49054 /* SignupViewController.swift */; };
+		5334CDBA25FA28AD00C49054 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5334CDB925FA28AD00C49054 /* LoginViewController.swift */; };
+		5334CDBE25FA28BF00C49054 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5334CDBD25FA28BF00C49054 /* HomeViewController.swift */; };
 		54519382752ABBEBB147CAA1 /* Pods_trainingOnIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 618E5628633558F7AF43B9E0 /* Pods_trainingOnIOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +31,9 @@
 		483BB85525F951DF00BEFF1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		483BB85725F951DF00BEFF1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5334CD9025F97B9600C49054 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5334CDB525FA288100C49054 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		5334CDB925FA28AD00C49054 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5334CDBD25FA28BF00C49054 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		618E5628633558F7AF43B9E0 /* Pods_trainingOnIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trainingOnIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		879C8F466B4B16FBCEEA0DD4 /* Pods-trainingOnIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trainingOnIOS.release.xcconfig"; path = "Target Support Files/Pods-trainingOnIOS/Pods-trainingOnIOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,9 +71,9 @@
 		483BB84825F951DE00BEFF1E /* trainingOnIOS */ = {
 			isa = PBXGroup;
 			children = (
+				5334CDB825FA288D00C49054 /* ViewControllers */,
 				483BB84925F951DE00BEFF1E /* AppDelegate.swift */,
 				483BB84B25F951DE00BEFF1E /* SceneDelegate.swift */,
-				483BB84D25F951DE00BEFF1E /* ViewController.swift */,
 				483BB84F25F951DE00BEFF1E /* Main.storyboard */,
 				483BB85225F951DF00BEFF1E /* Assets.xcassets */,
 				483BB85425F951DF00BEFF1E /* LaunchScreen.storyboard */,
@@ -77,13 +83,23 @@
 			path = trainingOnIOS;
 			sourceTree = "<group>";
 		};
+		5334CDB825FA288D00C49054 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				483BB84D25F951DE00BEFF1E /* ViewController.swift */,
+				5334CDB525FA288100C49054 /* SignupViewController.swift */,
+				5334CDB925FA28AD00C49054 /* LoginViewController.swift */,
+				5334CDBD25FA28BF00C49054 /* HomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		5A89BBFCBB6F88A32CD3B9E8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				47532D66F8884935CDC4D480 /* Pods-trainingOnIOS.debug.xcconfig */,
 				879C8F466B4B16FBCEEA0DD4 /* Pods-trainingOnIOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -107,6 +123,7 @@
 				483BB84325F951DE00BEFF1E /* Frameworks */,
 				483BB84425F951DE00BEFF1E /* Resources */,
 				81E1514DEB0ACD305DD31A00 /* [CP] Embed Pods Frameworks */,
+				71D235D41C6CCF3E02AA2558 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,6 +181,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		71D235D41C6CCF3E02AA2558 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-trainingOnIOS/Pods-trainingOnIOS-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-trainingOnIOS/Pods-trainingOnIOS-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-trainingOnIOS/Pods-trainingOnIOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		81E1514DEB0ACD305DD31A00 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -212,7 +246,10 @@
 			files = (
 				483BB84E25F951DE00BEFF1E /* ViewController.swift in Sources */,
 				483BB84A25F951DE00BEFF1E /* AppDelegate.swift in Sources */,
+				5334CDB625FA288100C49054 /* SignupViewController.swift in Sources */,
+				5334CDBA25FA28AD00C49054 /* LoginViewController.swift in Sources */,
 				483BB84C25F951DE00BEFF1E /* SceneDelegate.swift in Sources */,
+				5334CDBE25FA28BF00C49054 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

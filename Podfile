@@ -6,5 +6,6 @@ target 'trainingOnIOS' do
   use_frameworks!
 
   # Pods for trainingOnIOS
-	pod 'Firebase/Analytics'
+  pod 'Firebase/Core'
+  pod 'FirebaseUI/Auth'
 end

@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
+import FirebaseStorage
 
 class SignupViewController: UIViewController {
 
@@ -14,7 +17,6 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var lastNameTextField: UITextField!
     
     @IBOutlet weak var emailTextField: UITextField!
-    
     
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -35,8 +37,8 @@ class SignupViewController: UIViewController {
     }
     
     func isEmailValid(_ email: String) -> Bool {
-        
-        return true
+        let emailTest = NSPredicate(format: "SELF MATCHES %@ ", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
+        return emailTest.evaluate(with: email)
     }
     
     // Validating fields. If correct return nil else return error message in errorLabel
@@ -59,6 +61,7 @@ class SignupViewController: UIViewController {
         // Check if email is valid
         if isEmailValid(emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)) == false {
             // Email not valid
+            return "Invalid email"
         }
         
        return nil
@@ -71,16 +74,48 @@ class SignupViewController: UIViewController {
             // Something went wrong while validating fields
             showError(error!)
         } else {
+            // Creating trimmed versions of the data
+            let firstName = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
             // Create user
+            Auth.auth().createUser(withEmail: email, password: password) { (result, Error) in
+                
+                // Check for errors
+                if error != nil {
+                    // There was an error while creating a user
+                    self.showError("Error while creating user")
+                } else {
+                    // User created succesfully - Store fName + lName in firebase
+                    let db = Firestore.firestore()
+                    
+                    db.collection("users").addDocument(data: ["firstName": firstName, "lastName":lastName, "uid": result!.user.uid]) { (error) in
+                        
+                        if error != nil {
+                            // There was an error placing first and lastname to cloud firebase
+                            // A user i still created at this point
+                            self.showError("First and lastname not saved in firebase")
+                            // should maybe be handled in an other way than an error message
+                            
+                        } // else user data saved to firebase
+                    }
+                    
+                    // Transition to homepage
+
+                    
+                }
+            }
             
-            // Transition to homepage
         }
         
     }
     
+    // Method for showing text in the error label
     func showError(_ message: String) {
         errorLabel.text = message
+        // Makes the Label visible
         errorLabel.alpha = 1
     }
     

@@ -8,4 +8,7 @@ target 'trainingOnIOS' do
   # Pods for trainingOnIOS
   pod 'Firebase/Core'
   pod 'FirebaseUI/Auth'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
+  
 end

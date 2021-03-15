@@ -26,7 +26,9 @@ class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Makes label invisible
         errorLabel.alpha = 0
+        
         // Do any additional setup after loading the view.
     }
     
@@ -103,7 +105,7 @@ class SignupViewController: UIViewController {
                     }
                     
                     // Transition to homepage
-
+                    self.transitionToHome()
                     
                 }
             }
@@ -117,6 +119,18 @@ class SignupViewController: UIViewController {
         errorLabel.text = message
         // Makes the Label visible
         errorLabel.alpha = 1
+    }
+    
+    // Changes root view controller to 'storyboard ID'
+    func transitionToHome(){
+        
+        // making a reference to our HomeViewController
+        // Instanciating a viewController and casting it as a HomeViewController
+        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        
+        view.window?.rootViewController = homeViewController
+        // Will show 'HomeViewController' as the root view controller
+        view.window?.makeKeyAndVisible()
     }
     
 }

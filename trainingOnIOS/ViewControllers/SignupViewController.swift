@@ -24,6 +24,8 @@ class SignupViewController: UIViewController {
     
     @IBOutlet weak var errorLabel: UILabel!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Makes label invisible
@@ -68,6 +70,51 @@ class SignupViewController: UIViewController {
         
        return nil
     }
+    
+  
+    @IBOutlet weak var changeProgessView: UIProgressView!
+    
+    @IBOutlet weak var muscleSizeImage: UIImageView!
+    
+    
+    @IBAction func calledWhenEditingChanged(_ sender: Any) {
+        
+        //if statement that determines if the password is valid, to showcase it to the user
+        if(!(isPasswordValid(passwordTextField.text ?? "")))
+        {
+            print("password is not valid")
+            changeProgessView.tintColor = .systemRed
+            changeProgessView.setProgress(0.1, animated: true)
+
+        }else {
+            print("password is valid")
+            //progressView that changes according to the length of the passwordTextField.text
+            changeProgessView.tintColor = .systemGreen
+            changeProgessView.setProgress(Float(passwordTextField.text!.count)/10, animated: true)
+        }
+        
+        
+        //if statements that determine the strength of the password
+        //is going to be used to insert svg. images like the paperprotype described
+        
+        if passwordTextField.text?.count ?? 0 < 3
+        {
+            print("password weak")
+            muscleSizeImage.image = UIImage(named: "SignInPictureWeak")
+            
+        }
+        if(passwordTextField.text?.count ?? 0 >= 3 && passwordTextField.text?.count ?? 0 < 6)
+        {
+            print("password medium")
+            muscleSizeImage.image = UIImage(named: "SignInPictureMedium")
+        }
+        if passwordTextField.text?.count ?? 0 >= 6
+        {
+            print("password strong")
+            muscleSizeImage.image = UIImage(named: "SignInPictureBuff")
+        }
+    }
+
     
     @IBAction func signUpButtonPressed(_ sender: UIButton) {
         // Validate Fields

@@ -159,7 +159,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4iH-zc-gN1">
-                                <rect key="frame" x="40" y="84" width="334" height="320.5"/>
+                                <rect key="frame" x="40" y="84" width="334" height="464.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oAi-3d-oax">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
@@ -176,13 +176,23 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8GM-vf-kiV">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create Strong Password!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8GM-vf-kiV">
                                         <rect key="frame" x="0.0" y="180" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <action selector="calledWhenEditingChanged:" destination="a0s-Iw-zOX" eventType="editingChanged" id="FCi-Db-E6f"/>
+                                        </connections>
                                     </textField>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="z0X-hM-Hw1">
+                                        <rect key="frame" x="0.0" y="240" width="334" height="4"/>
+                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                    </progressView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SignInPictureBuff" translatesAutoresizingMaskIntoConstraints="NO" id="PKm-7V-GcT">
+                                        <rect key="frame" x="0.0" y="264" width="334" height="100"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2r-V0-bKL">
-                                        <rect key="frame" x="0.0" y="240" width="334" height="40"/>
+                                        <rect key="frame" x="0.0" y="384" width="334" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Pkz-h8-JQ3"/>
                                         </constraints>
@@ -193,7 +203,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hq-le-9Hy">
-                                        <rect key="frame" x="0.0" y="300" width="334" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="444" width="334" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
@@ -217,17 +227,19 @@
                     </view>
                     <navigationItem key="navigationItem" id="jMr-yk-78x"/>
                     <connections>
+                        <outlet property="changeProgessView" destination="z0X-hM-Hw1" id="HjV-xi-7zp"/>
                         <outlet property="emailTextField" destination="NNv-PX-CvT" id="7eN-x6-EjF"/>
                         <outlet property="errorLabel" destination="2hq-le-9Hy" id="4fF-NS-dQq"/>
                         <outlet property="firstNameTextField" destination="oAi-3d-oax" id="NOs-Me-NDS"/>
                         <outlet property="lastNameTextField" destination="z1c-BA-S7D" id="02p-bA-2Q1"/>
+                        <outlet property="muscleSizeImage" destination="PKm-7V-GcT" id="3hs-z2-GJo"/>
                         <outlet property="passwordTextField" destination="8GM-vf-kiV" id="5ia-yg-G27"/>
                         <outlet property="signUpButton" destination="J2r-V0-bKL" id="ssZ-DZ-1Ss"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qJt-XO-jxl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1538" y="-269"/>
+            <point key="canvasLocation" x="1537.68115942029" y="-269.19642857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OHS-u4-gz3">
@@ -248,8 +260,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="SignInPictureBuff" width="100" height="100"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

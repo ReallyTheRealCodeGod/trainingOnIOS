@@ -72,6 +72,6 @@ class LoginViewController: UIViewController {
         return nil
     }
     
-    
+    // NOGET NYT
     // TEKST
 }

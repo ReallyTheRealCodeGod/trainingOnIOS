@@ -73,5 +73,5 @@ class LoginViewController: UIViewController {
     }
     
     
-    // TEKST2
+    // hvorfor er kineserne så gule? det er fordi de elsker citron
 }

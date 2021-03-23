@@ -17,6 +17,7 @@
 		5334CDB625FA288100C49054 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5334CDB525FA288100C49054 /* SignupViewController.swift */; };
 		5334CDBA25FA28AD00C49054 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5334CDB925FA28AD00C49054 /* LoginViewController.swift */; };
 		5334CDBE25FA28BF00C49054 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5334CDBD25FA28BF00C49054 /* HomeViewController.swift */; };
+		533F9E67260A8F1F000E1017 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533F9E66260A8F1F000E1017 /* TableViewController.swift */; };
 		534190D025FE0D5A008F4C37 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534190CF25FE0D5A008F4C37 /* Constants.swift */; };
 		54519382752ABBEBB147CAA1 /* Pods_trainingOnIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 618E5628633558F7AF43B9E0 /* Pods_trainingOnIOS.framework */; };
 /* End PBXBuildFile section */
@@ -35,6 +36,7 @@
 		5334CDB525FA288100C49054 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		5334CDB925FA28AD00C49054 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5334CDBD25FA28BF00C49054 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		533F9E66260A8F1F000E1017 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		534190CF25FE0D5A008F4C37 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		618E5628633558F7AF43B9E0 /* Pods_trainingOnIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trainingOnIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		879C8F466B4B16FBCEEA0DD4 /* Pods-trainingOnIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trainingOnIOS.release.xcconfig"; path = "Target Support Files/Pods-trainingOnIOS/Pods-trainingOnIOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				5334CDB525FA288100C49054 /* SignupViewController.swift */,
 				5334CDB925FA28AD00C49054 /* LoginViewController.swift */,
 				5334CDBD25FA28BF00C49054 /* HomeViewController.swift */,
+				533F9E66260A8F1F000E1017 /* TableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				483BB84E25F951DE00BEFF1E /* ViewController.swift in Sources */,
 				483BB84A25F951DE00BEFF1E /* AppDelegate.swift in Sources */,
 				5334CDB625FA288100C49054 /* SignupViewController.swift in Sources */,
+				533F9E67260A8F1F000E1017 /* TableViewController.swift in Sources */,
 				5334CDBA25FA28AD00C49054 /* LoginViewController.swift in Sources */,
 				534190D025FE0D5A008F4C37 /* Constants.swift in Sources */,
 				483BB84C25F951DE00BEFF1E /* SceneDelegate.swift in Sources */,

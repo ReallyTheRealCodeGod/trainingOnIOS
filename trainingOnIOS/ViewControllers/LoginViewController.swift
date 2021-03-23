@@ -23,8 +23,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         errorLabel.alpha = 0
         
-        self.passwordTextField.delegate = self
-        self.emailTextField.delegate = self
+        passwordTextField.delegate = self
+        emailTextField.delegate = self
         
             // Do any additional setup after loading the view.
     }
@@ -77,7 +77,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
+        view.endEditing(true)
         return false
     }
     

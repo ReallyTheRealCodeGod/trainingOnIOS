@@ -9,6 +9,7 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import FirebaseStorage
+import FirebaseFirestore
 
 class SignupViewController: UIViewController, UITextFieldDelegate {
 
@@ -31,10 +32,10 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         // Makes label invisible
         errorLabel.alpha = 0
         
-        self.firstNameTextField.delegate = self
-        self.lastNameTextField.delegate = self
-        self.emailTextField.delegate = self
-        self.passwordTextField.delegate = self
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         
         // Do any additional setup after loading the view.
     }
@@ -186,7 +187,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
+        view.endEditing(true)
         return false
     }
     

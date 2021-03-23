@@ -10,7 +10,7 @@ import FirebaseAuth
 import Firebase
 import FirebaseStorage
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var firstNameTextField: UITextField!
     
@@ -30,6 +30,11 @@ class SignupViewController: UIViewController {
         super.viewDidLoad()
         // Makes label invisible
         errorLabel.alpha = 0
+        
+        self.firstNameTextField.delegate = self
+        self.lastNameTextField.delegate = self
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
         
         // Do any additional setup after loading the view.
     }
@@ -178,6 +183,11 @@ class SignupViewController: UIViewController {
         view.window?.rootViewController = homeViewController
         // Will show 'HomeViewController' as the root view controller
         view.window?.makeKeyAndVisible()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
 }

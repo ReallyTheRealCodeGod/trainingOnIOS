@@ -29,7 +29,13 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         
         // Validate that textFields are filled out
+        let error = validateFields()
         
+        if error != nil {
+            // Shows the returned error (String) from validateFields()
+            errorLabel.text = error
+            errorLabel.alpha = 1
+        } else {
         // Creating trimmed versions of the data
         let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -49,8 +55,21 @@ class LoginViewController: UIViewController {
                 self.view.window?.rootViewController = homeViewController
                 // Will show 'HomeViewController' as the root view controller
                 self.view.window?.makeKeyAndVisible()
+                }
             }
         }
+    }
+    
+    
+    func validateFields() -> String? {
+        
+        // Checks if all fields are filled in - All whitespaces removed
+        if  emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            return "Please fill in all fields!"
+        }
+        
+        return nil
     }
     
     

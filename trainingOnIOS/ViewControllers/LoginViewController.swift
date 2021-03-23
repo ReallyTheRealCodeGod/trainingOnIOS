@@ -73,5 +73,5 @@ class LoginViewController: UIViewController {
     }
     
     
-    // TEKST
+    // TEKST2
 }

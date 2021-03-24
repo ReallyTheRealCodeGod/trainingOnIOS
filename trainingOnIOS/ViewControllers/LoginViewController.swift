@@ -19,6 +19,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var errorLabel: UILabel!
     
+    @IBOutlet weak var topPictureFlexing: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.alpha = 0
@@ -27,6 +29,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         emailTextField.delegate = self
         
             // Do any additional setup after loading the view.
+    }
+    
+    //used to change flexing picture on front page
+    //so it can create an animation when typing
+    var flexNum = 1
+    
+    @IBAction func changeFlexPicture(_ sender: UITextField) {
+        
+        topPictureFlexing.image = UIImage(named: "loginPictureFlex_\(flexNum)")
+        
+        //facilitates the change in picture on the login screen
+        if(flexNum == 1) {
+            flexNum = 2
+        }else{
+            flexNum = 1
+        }
+        
+        
+        
     }
     
 

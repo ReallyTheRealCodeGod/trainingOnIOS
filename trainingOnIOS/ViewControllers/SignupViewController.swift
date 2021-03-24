@@ -82,6 +82,10 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var muscleSizeImage: UIImageView!
     
+    //dismisses the modalpopup when clicked and reverts back to the login view
+    @IBAction func dismissSignup_onClick(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func calledWhenEditingChanged(_ sender: Any) {
         

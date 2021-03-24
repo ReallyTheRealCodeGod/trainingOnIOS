@@ -9,11 +9,19 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var userPage: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func goToUserPage(_ sender: Any) {
+        
+        
+        
+    }
+    
     
 
     /*

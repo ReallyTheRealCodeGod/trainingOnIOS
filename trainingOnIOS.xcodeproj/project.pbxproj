@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4812C759260CC3930049CC96 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4812C758260CC3930049CC96 /* ProfilePageViewController.swift */; };
 		483BB84A25F951DE00BEFF1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483BB84925F951DE00BEFF1E /* AppDelegate.swift */; };
 		483BB84C25F951DE00BEFF1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483BB84B25F951DE00BEFF1E /* SceneDelegate.swift */; };
 		483BB85125F951DE00BEFF1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483BB84F25F951DE00BEFF1E /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		47532D66F8884935CDC4D480 /* Pods-trainingOnIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trainingOnIOS.debug.xcconfig"; path = "Target Support Files/Pods-trainingOnIOS/Pods-trainingOnIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		4812C758260CC3930049CC96 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		483BB84625F951DE00BEFF1E /* trainingOnIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trainingOnIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		483BB84925F951DE00BEFF1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		483BB84B25F951DE00BEFF1E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				5334CDB925FA28AD00C49054 /* LoginViewController.swift */,
 				5334CDBD25FA28BF00C49054 /* HomeViewController.swift */,
 				533F9E66260A8F1F000E1017 /* TableViewController.swift */,
+				4812C758260CC3930049CC96 /* ProfilePageViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				534190D025FE0D5A008F4C37 /* Constants.swift in Sources */,
 				483BB84C25F951DE00BEFF1E /* SceneDelegate.swift in Sources */,
 				5334CDBE25FA28BF00C49054 /* HomeViewController.swift in Sources */,
+				4812C759260CC3930049CC96 /* ProfilePageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

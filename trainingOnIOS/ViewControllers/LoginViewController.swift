@@ -27,6 +27,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         passwordTextField.delegate = self
         emailTextField.delegate = self
+        passwordTextField.autocapitalizationType = .none
+        passwordTextField.autocorrectionType = .no
+        emailTextField.autocapitalizationType = .none
+        emailTextField.autocorrectionType = .no
         
             // Do any additional setup after loading the view.
     }
